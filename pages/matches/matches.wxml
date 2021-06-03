@@ -1,0 +1,46 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">选择比赛场次</view>
+</cu-custom>
+
+<view class="cu-bar bg-green foot">
+  <view class="margin-left">你已经选择了{{players_count}}场比赛</view>
+  <view class="action margin-right" bindtap="calculate">
+    <text>统计</text>
+  </view>
+</view>
+
+<checkbox-group bindchange="checkboxChange">
+  <view class="cu-form-group" wx:for="{{group_info_each_match}}" wx:key="match_id" style="min-height:180rpx;">
+
+    <view>
+      <view class="title">{{item.map_name}}</view>
+      <view class="text-sm">{{item.match_time}}</view>
+    </view>
+    <view class="owner_stats">
+      <view><text>{{item.owner_kills}}</text></view>
+      <view><text class="text-sm">击杀</text></view>
+    </view>
+    <view class="owner_stats">
+      <view>
+        <text>{{item.owner_damageDealt}}</text>
+      </view>
+      <view> <text class="text-sm">伤害</text></view>
+    </view>
+    <view class="owner_stats">
+      <view><text>{{item.owner_assists}}</text> </view>
+      <view><text class="text-sm">助攻</text> </view>
+    </view>
+    <view>
+      <view wx:for="{{item.group_info}}" wx:key="index">
+        <text class="text-sm">{{item.stats.name}}</text>
+      </view>
+    </view>
+
+    
+
+    <checkbox class="round blue" value="{{item.match_id}}" checked="{{item.checked}}" />
+  </view>
+
+  <view style="min-height:180rpx;"></view>
+</checkbox-group>

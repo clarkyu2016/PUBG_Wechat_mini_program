@@ -1,0 +1,48 @@
+<!--pages/calculate/calculate.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">统计结果</view>
+</cu-custom>
+
+
+<view wx:for="{{player_data}}" wx:key="index">
+  <view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view>
+        <text class="cuIcon-peoplefill text-blue margin-right-xs"></text> {{item.name}}
+      </view>
+      <view class="text-gray text-sm">
+        <text class="cuIcon-infofill margin-right-xs"> 总击杀数</text> {{item.kills}}
+        <view class="cu-tag bg-yellow" hidden="{{ max_kills_player == item.name? false : true}}">击杀王</view>
+        
+      </view>
+
+      <view class="text-gray text-sm">
+        <text class="cuIcon-infofill margin-right-xs"> 总伤害数</text> {{item.damageDealt}}
+        <view class="cu-tag bg-yellow" hidden="{{ max_damageDealt_player == item.name? false : true}}">伤害王</view>
+      </view>
+
+      <view class="text-gray text-sm">
+        <text class="cuIcon-infofill margin-right-xs"> 总助攻数</text> {{item.assists}}
+      </view>
+
+      <view class="text-gray text-sm">
+        <text class="cuIcon-infofill margin-right-xs"> 总治疗数</text> {{item.heals}}
+        <view class="cu-tag bg-yellow" hidden="{{ max_heals_player == item.name? false : true}}">打药狂魔</view>
+      </view>
+
+      <view class="text-gray text-sm">
+        <text class="cuIcon-infofill margin-right-xs"> 场均伤害</text> {{item.avg_damageDealt}} 
+        <view class="cu-tag bg-yellow"hidden="{{ max_avg_damageDealt_player == item.name? false : true}}"> 大腿</view>
+        <view class="cu-tag bg-yellow" hidden="{{ min_avg_damageDealt_player == item.name? false : true}}">在划水</view>
+      </view>
+
+
+    </view>
+
+  </view>
+</view>
+
+</view>
+

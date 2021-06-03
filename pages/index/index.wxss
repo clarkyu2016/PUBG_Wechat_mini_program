@@ -1,0 +1,9 @@
+.search_icon{
+  background-color:#ccc0;
+  background-size: 64rpx;
+  background-repeat: no-repeat;
+}
+
+.phClass{
+  color:rgb(46, 46, 46);
+}

@@ -1,0 +1,34 @@
+
+<image src='/images/BasicsBg.png' mode='widthFix' class='png' style='width:100%;height:400rpx'></image>
+
+<view class="cu-list menu sm-border card-menu margin-top shadow-warp">
+  <view class="cu-bar input" style="min-height:120rpx;">
+    <view class="action">
+    </view>
+
+    <view class="cu-avatar round search_icon" style="background-image:url(https://clarkyu1993.coding.net/p/tuku/d/pic/git/raw/master/chicken.png);"></view>
+
+    <input class="solid-bottom margin-left" maxlength="300" cursor-spacing="10" placeholder-class="phClass" placeholder="输入大逃杀玩家姓名"
+    value="{{ input_playername }}" bind:input="PlayernameChange"></input>
+    <view class="action">
+    </view>
+
+
+    <text class="cuIcon-search text-yellow" style="font-size:50rpx;" bindtap='searchPlayer'></text>
+
+  </view>
+</view>
+
+<view class="padding text-center margin-top">
+  <view class="padding-lr bg-white">
+
+    <view class="padding">找出队伍里在划水的那个人！</view>
+    <view class="padding">适用于红包局、父子局等多种场景</view>
+    <view class="padding">目前仅支持查询近15场对战记录</view>
+  </view>
+</view>
+  
+
+
+
+  
